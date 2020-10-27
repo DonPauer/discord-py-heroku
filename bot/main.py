@@ -43,8 +43,8 @@ def generate(targets=6, small=False, isWide=False):
 
 
 @bot.command()
-async def aimtrain(ctx, numOne: int, smallString: str, wideString:str):
-    await ctx.send(generate(targets=numOne, small= True if smallString=="small" else False , isWide = True if wideString == "wide" else False ))
+async def aimtrain(ctx, numOne: int):
+    await ctx.send(generate(targets=numOne))
 
 if __name__ == "__main__":
     bot.run(TOKEN)
