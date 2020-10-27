@@ -17,7 +17,6 @@ async def ping(ctx):
 async def marco(ctx):
     await ctx.send("polo")
 
-    
 def line(width):
   return [" "]*width
 
@@ -45,11 +44,6 @@ def generate(targets=6,small=False, wide=False):
 @bot.command()
 async def aimtrain(ctx, numOne: int):
     await ctx.send(generate(targets=numOne))
-
-@bot.command()
-async def aimtrain(ctx, numOne: int, smallString):
-    isSmall = True if smallString == "small" else False
-    await ctx.send(generate(targets=numOne, small=isSmall))
 
 if __name__ == "__main__":
     bot.run(TOKEN)
