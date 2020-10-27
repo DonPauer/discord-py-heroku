@@ -24,7 +24,11 @@ def line(width):
 def quote(s):
   return s
 
-def generate(targets=6, height=6, width=80, small=False):
+def generate(targets=6, small=False, isWide=False):
+
+  height = 30
+  width = 320 if isWide else 160 
+    
   lines = [line(width) for x in range(height)]
 
   while targets > 0:
@@ -37,11 +41,11 @@ def generate(targets=6, height=6, width=80, small=False):
   lines = ["".join(x) for x in lines]
   return "\n".join(map(quote, lines))
 
-print(generate(targets=20, width=80, small=False))
+print(generate(targets=6, small=False, isWide = False))
 
 @bot.command()
-async def aimtrain(ctx, numOne: int, numTwo: int):
-    await ctx.send(generate(targets=20, width=80, small=False))
+async def aimtrain(ctx, numOne: int, smallString: str, wideString:str):
+    await ctx.send(generate(targets=numOne, small= True if smallString=="small" else False , wide = True if wideString == "wide" else False ))
 
 if __name__ == "__main__":
     bot.run(TOKEN)
