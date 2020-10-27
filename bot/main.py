@@ -1,4 +1,4 @@
-import os
+﻿import os
 import random
 from discord.ext import commands
 
@@ -21,7 +21,7 @@ def line(width):
   return [" "]*width
 
 def quote(s):
-  return s
+ return "‏‏‎ ‎"+s+"‏‏‎ ‎"
 
 def generate(targets=6,small=False, wide=False):
 
@@ -39,6 +39,10 @@ def generate(targets=6,small=False, wide=False):
     targets -= 1
   lines = ["".join(x) for x in lines]
   return "\n".join(map(quote, lines))
+
+print(generate(targets=10,small=True))
+
+
 
 
 @bot.command()
