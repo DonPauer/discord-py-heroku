@@ -26,8 +26,8 @@ def quote(s):
 
 def generate(targets=6,small=False, wide=False):
 
-  height = 30
-  width = 300 if wide else 150 
+  height = 15
+  width = 300 if wide else 100 
     
   lines = [line(width) for x in range(height)]
 
