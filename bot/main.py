@@ -61,7 +61,7 @@ def generate2(targets=6,small=False, wide=False):
   while targets > 0:
     r_i = random.randint(0, height-1)
     r_j = random.randint(1, width-2)
-    if lines[r_i][r_j] != " ":
+    if lines[r_i][r_j] != " " or lines[r_i][r_j-1] != " " or lines[r_i][r_j+1] != " ":
       continue
     lines[r_i][r_j] = "||p||" if small else "o"
     lines[r_i][r_j+1] = lines[r_i][r_j+1] if small else "p||"
@@ -83,5 +83,11 @@ async def ww6t(ctx):
     for msg in splitMsg(generate2(targets=6, wide=True)):
         await ctx.send(msg)
 
+@bot.command()
+async def ww20t(ctx):
+    for msg in splitMsg(generate2(targets=20, wide=True)):
+        await ctx.send(msg)
+
 if __name__ == "__main__":
     bot.run(TOKEN)
+
