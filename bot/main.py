@@ -45,12 +45,6 @@ def generate(targets=6,small=False, wide=False):
 
 
 
-
-@bot.command()
-async def aimtrain(ctx, numOne: int):
-    await ctx.send(generate(targets=numOne))
-
-
 def generate2(targets=6,small=False, wide=False):
 
   height = 30
