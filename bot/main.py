@@ -88,6 +88,11 @@ async def ww20t(ctx):
     for msg in splitMsg(generate2(targets=20, wide=True)):
         await ctx.send(msg)
 
+@bot.command()
+async def widewall(ctx, numOne: int):
+    for msg in splitMsg(generate2(targets=numOne, wide=True)):
+        await ctx.send(msg)
+
 if __name__ == "__main__":
     bot.run(TOKEN)
 
