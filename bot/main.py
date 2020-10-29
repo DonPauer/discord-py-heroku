@@ -80,7 +80,7 @@ def splitMsg(msg):
 
 @bot.command()
 async def ww6t(ctx, numOne: int):
-    for msg in generate2(targets=6, wide=True)
+    for msg in splitMsg(generate2(targets=6, wide=True))
         await ctx.send(msg)
 
 if __name__ == "__main__":
