@@ -74,12 +74,12 @@ def splitMsg(msg):
     splits = msg.split("\n")
     threeLineArray = [[splits[3*i], splits[3*i + 1],splits[3*i+2]] 
       for i in range(len(splits)//3)]
-    threeLineArray = ["".join(x) for x in threeLineArray]
+    threeLineArray = ["\n".join(x) for x in threeLineArray]
     return threeLineArray
 
 
 @bot.command()
-async def ww6t(ctx, numOne: int):
+async def ww6t(ctx):
     for msg in splitMsg(generate2(targets=6, wide=True)):
         await ctx.send(msg)
 
