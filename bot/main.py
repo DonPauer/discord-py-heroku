@@ -72,7 +72,7 @@ def generate2(targets=6,small=False, wide=False):
 
 def splitMsg(msg):
     splits = msg.split("\n")
-    threeLineArray = [[splits[3*i], splits[3*i + 1],splits[3*i+2],splits[3*i+3],splits[3*i+4],splits[3*i+5]] 
+    threeLineArray = [[splits[6*i], splits[6*i + 1],splits[6*i+2],splits[6*i+3],splits[6*i+4],splits[6*i+5]] 
       for i in range(len(splits)//6)]
     threeLineArray = ["\n".join(x) for x in threeLineArray]
     return threeLineArray
