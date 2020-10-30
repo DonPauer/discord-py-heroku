@@ -45,10 +45,29 @@ def generate(targets=6,small=False, wide=False):
 
 
 
-def generate2(targets=6,small=False, wide=False):
+def generate2(targets=6, small=False, wide=False):
 
   height = 30
   width = 300 if wide else 100 
+    
+  lines = [line(width) for x in range(height)]
+
+  while targets > 0:
+    r_i = random.randint(0, height-1)
+    r_j = random.randint(1, width-2)
+    if lines[r_i][r_j] != " " or lines[r_i][r_j-1] != " " or lines[r_i][r_j+1] != " ":
+      continue
+    lines[r_i][r_j] = "||p||" if small else "o"
+    lines[r_i][r_j+1] = lines[r_i][r_j+1] if small else "p||"
+    lines[r_i][r_j-1] = lines[r_i][r_j-1] if small else "||p"
+    targets -= 1
+  lines = ["".join(x) for x in lines]
+  return "\n".join(map(quote, lines))
+
+def generateMobile(targets=6, small=False, wide=False):
+
+  height = 10 if wide else 20
+  width = 150 if wide else 80 
     
   lines = [line(width) for x in range(height)]
 
@@ -87,6 +106,15 @@ async def widewall(ctx, numOne: int):
     for msg in splitMsg(generate2(targets=numOne, wide=True)):
         await ctx.send(msg)
 
+@bot.command()
+async def mobile(ctx, numOne: int):
+    for msg in splitMsg(generateMobile(targets=numOne, wide=False)):
+        await ctx.send(msg)
+
+@bot.command()
+async def mobileWide(ctx, numOne: int):
+    for msg in splitMsg(generateMobile(targets=numOne, wide=True)):
+        await ctx.send(msg)
+
 if __name__ == "__main__":
     bot.run(TOKEN)
-
