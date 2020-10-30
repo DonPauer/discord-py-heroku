@@ -24,6 +24,7 @@ def quote(s):
  return "‏‏‎‏‏‎ ‎"+s+"‏‏‎‏‏‎‏‏‎ ‎"
 
 
+
 def generate(targets=6,small=False, wide=False):
 
   height = 15
