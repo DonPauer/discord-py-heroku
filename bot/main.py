@@ -108,12 +108,12 @@ async def widewall(ctx, numOne: int):
 
 @bot.command()
 async def mobile(ctx, numOne: int):
-    for msg in splitMsg(generateMobile(targets=numOne, wide=False)):
+    for msg in generateMobile(targets=numOne, wide=False):
         await ctx.send(msg)
 
 @bot.command()
 async def mobilewide(ctx, numOne: int):
-    for msg in splitMsg(generateMobile(targets=numOne, wide=True)):
+    for msg in generateMobile(targets=numOne, wide=True):
         await ctx.send(msg)
 
 if __name__ == "__main__":
