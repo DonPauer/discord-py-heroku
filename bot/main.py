@@ -18,10 +18,10 @@ async def marco(ctx):
     await ctx.send("polo")
 
 def line(width):
-  return [" "]*width
+  return ["‏‏‎‏‏‎ ‎"]*width
 
 def quote(s):
- return "‏‏‎‏‏‎ ‎"+s+"‏‏‎‏‏‎‏‏‎ ‎"
+ return s
 
 
 
