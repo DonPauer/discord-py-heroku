@@ -113,7 +113,7 @@ async def mobile(ctx, numOne: int):
         await ctx.send(msg)
 
 @bot.command()
-async def mobilewide(ctx, numOne: int):
+async def mobileWide(ctx, numOne: int):
     for msg in splitMsg(generateMobile(targets=numOne, wide=True)):
         await ctx.send(msg)
 
