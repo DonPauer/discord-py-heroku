@@ -108,13 +108,11 @@ async def widewall(ctx, numOne: int):
 
 @bot.command()
 async def mobile(ctx, numOne: int):
-    for msg in generateMobile(targets=numOne, wide=False):
-        await ctx.send(msg)
+    await ctx.send(generateMobile(targets=numOne, wide=True))
 
 @bot.command()
 async def mobilewide(ctx, numOne: int):
-    for msg in generateMobile(targets=numOne, wide=True):
-        await ctx.send(msg)
+    await ctx.send(generateMobile(targets=numOne, wide=True))
 
 if __name__ == "__main__":
     bot.run(TOKEN)
