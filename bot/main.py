@@ -108,7 +108,7 @@ async def widewall(ctx, numOne: int):
 
 @bot.command()
 async def mobile(ctx, numOne: int):
-    await ctx.send(generateMobile(targets=numOne, wide=True))
+    await ctx.send(generateMobile(targets=numOne, wide=False))
 
 @bot.command()
 async def mobilewide(ctx, numOne: int):
