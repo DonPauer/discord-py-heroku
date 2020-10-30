@@ -21,7 +21,7 @@ def line(width):
   return [" "]*width
 
 def quote(s):
- return "‏‏‎ ‎‎"+s+"‏‏‎ ‎‎"
+ return " ‎"+s+" ‎"
 
 
 def generate(targets=6,small=False, wide=False):
