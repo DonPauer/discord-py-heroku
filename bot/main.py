@@ -18,11 +18,10 @@ async def marco(ctx):
     await ctx.send("polo")
 
 def line(width):
-  return ["‏‏‎‏‏‎ ‎"]*width
+  return [" "]*width
 
 def quote(s):
  return " ‎"+s+" ‎"
-
 
 
 def generate(targets=6,small=False, wide=False):
@@ -113,7 +112,7 @@ async def mobile(ctx, numOne: int):
         await ctx.send(msg)
 
 @bot.command()
-async def mobileWide(ctx, numOne: int):
+async def mobilewide(ctx, numOne: int):
     for msg in splitMsg(generateMobile(targets=numOne, wide=True)):
         await ctx.send(msg)
 
